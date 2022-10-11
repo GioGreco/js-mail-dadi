@@ -7,6 +7,7 @@
 :root{
     --blau: #004e97;
     --grana: #9a1f47;
+    --lighter-red: #ad677f;
 }
 
 body{
@@ -132,3 +133,46 @@ button:hover{
 #dice button{
     color: var(--blau);
 }
+
+#dice .number{
+    border: 3px solid var(--blau);
+    height: 5vw;
+    width: 5vw;
+    border-radius: 15px;
+    margin: 0 30px;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    line-height: 5vw;
+}
+
+#dice .throwDice{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%,0);
+    background-color: var(--lighter-red);
+    font-size: 1.5rem;
+    border: 1px solid white;
+}
+
+#dice .winner{
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* .reset{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: red;
+    padding: 30px;
+}
+
+.reset a{
+    color: black;
+    text-decoration: none;
+} */

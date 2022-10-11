@@ -26,6 +26,7 @@ diceBtn.addEventListener('click', () => {
         setTimeout(() => {
             mailSection.classList.add('d-none');
             diceBtn.classList.add('d-none');
+            diceGame();
         }, 1000)
     };
     removeSection();
@@ -72,4 +73,52 @@ function mailValidation(){
     };
 
     searchMail.addEventListener('click', research);
+}
+
+//dice exercise
+
+const faces = 6;
+
+function diceGame(){
+    const pcNumber = document.createElement('div');
+    diceSection.append(pcNumber);
+    pcNumber.className = 'number pc-number';
+    pcNumber.innerHTML = `<i class="fa-solid fa-desktop"></i>`;
+
+    const myNumber = document.createElement('div');
+    diceSection.append(myNumber);
+    myNumber.className = 'number my-number';
+    myNumber.innerHTML = `<i class="fa-solid fa-user"></i>`;
+
+    const throwDice = document.createElement('button');
+    diceSection.append(throwDice);
+    throwDice.className = 'throwDice';
+    throwDice.innerText = 'LANCIA I DADI';
+
+    const winner = document.createElement('div');
+    winner.className = 'winner';
+    diceSection.prepend(winner);
+
+    function diceSimulator(){
+        let pcResult = Math.floor(Math.random() * faces);
+        let myResult = Math.floor(Math.random() * faces);
+
+        pcNumber.innerHTML = pcResult;
+        myNumber.innerHTML = myResult;
+
+        if(pcResult === myResult){
+            winner.innerHTML = 'PAREGGIO!';
+            winner.style.color = 'yellow';
+        }
+        else if(pcResult > myResult){
+            winner.innerHTML = 'YOU LOSE!';
+            winner.style.color = 'red';
+        }
+        else if(myResult > pcResult){
+            winner.innerHTML = 'YOU WIN!';
+            winner.style.color = 'green';
+        }
+    };
+
+    throwDice.addEventListener('click', diceSimulator);
 }
