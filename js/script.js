@@ -143,6 +143,7 @@ function diceGame(){
                 winner.innerHTML = `${c} VITTORIE DI FILA, PAZZESCO!`;
             }
         }
+        throwDice.innerText = 'RILANCIA!';
     };
 
     throwDice.addEventListener('click', diceSimulator);
