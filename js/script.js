@@ -99,6 +99,10 @@ function diceGame(){
     winner.className = 'winner';
     diceSection.prepend(winner);
 
+    let a = 0;
+    let b = 0;
+    let c = 0;
+
     function diceSimulator(){
         let pcResult = Math.floor(Math.random() * faces);
         let myResult = Math.floor(Math.random() * faces);
@@ -109,16 +113,38 @@ function diceGame(){
         if(pcResult === myResult){
             winner.innerHTML = 'PAREGGIO!';
             winner.style.color = 'yellow';
+            a++;
+            b = 0;
+            c = 0;
+            if(a == 2){
+                winner.innerHTML = 'PAREGGITE!';
+            }
+            else if(a > 2){
+                winner.innerHTML = 'PAREGGITE ACUTA!';
+            }
         }
         else if(pcResult > myResult){
-            winner.innerHTML = 'YOU LOSE!';
+            winner.innerHTML = 'HAI PERSO!';
             winner.style.color = 'red';
+            b++;
+            a = 0;
+            c = 0;
+            if(b > 1){
+                winner.innerHTML = `${b} SCONFITTE DI FILA, SI METTE MALE!`;
+            }
         }
         else if(myResult > pcResult){
-            winner.innerHTML = 'YOU WIN!';
+            winner.innerHTML = 'HAI VINTO!';
             winner.style.color = 'green';
+            c++;
+            a = 0;
+            b = 0;
+            if(c > 1){
+                winner.innerHTML = `${c} VITTORIE DI FILA, PAZZESCO!`;
+            }
         }
     };
 
     throwDice.addEventListener('click', diceSimulator);
 }
+
