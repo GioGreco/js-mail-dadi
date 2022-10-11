@@ -49,27 +49,27 @@ function mailValidation(){
     searchMail.className = 'searchMail';
     searchMail.innerText = 'VERIFICA';
 
+    const outcome = document.createElement('div');
+    mailSection.append(outcome);
+    outcome.className = 'outcome'
+
     let check = false;
 
     function research(){
         for(let i=0; i < mails.length; i++){
-            // let check = false;
             if(mailInput.value === mails[i]){
                 check = true;
             };
         }
         if(check){
-            const success = document.createElement('div');
-            mailSection.append(success);
-            success.className = 'success';
-            success.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+            outcome.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+            outcome.style.color = 'green';
         }
         else{
-            const failure = document.createElement('div');
-            mailSection.append(failure);
-            failure.className = 'failure';
-            failure.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
+            outcome.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
+            outcome.style.color = 'red';
         };
+        check = false;
     };
 
     searchMail.addEventListener('click', research);

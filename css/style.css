@@ -86,34 +86,17 @@ button:hover{
     color: var(--blau);
 }
 
-#mail .success{
+#mail .outcome{
     position: absolute;
     left: 50%;
     top: 75%;
     transform: translate(0, -50%);
-    color: green;
     opacity: 0;
     animation: result 1s ease-out forwards;
 }
 
-#mail .success i{
+#mail .outcome i{
     font-size: 5rem;
-    display: block;
-}
-
-#mail .failure{
-    position: absolute;
-    left: 50%;
-    top: 75%;
-    transform: translate(0, -50%);
-    color: red;
-    opacity: 0;
-    animation: result 1s ease-out forwards;
-}
-
-#mail .failure i{
-    font-size: 5rem;
-    display: block;
 }
 
 @keyframes result {
