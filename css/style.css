@@ -3,3 +3,132 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+:root{
+    --blau: #004e97;
+    --grana: #9a1f47;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+}
+
+/* GENERAL */
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    font-size: 4.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+button:hover{
+    background-color: rgba(255,255,255,0.2);
+}
+
+.active{
+    animation: full-size 1s ease-in-out forwards;
+}
+
+@keyframes full-size {
+    100%{
+        height: 100vh;
+    }
+}
+
+.collapse{
+    animation: disappear 1s ease-in-out forwards;
+}
+
+@keyframes disappear {
+    100%{
+        height: 0vh;
+    }    
+}
+
+.d-none{
+    display: none;
+}
+/* MAIL SECTION */
+
+#mail{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: var(--blau);
+}
+
+#mail button{
+    color: var(--grana);
+}
+
+#mail .mailInput{
+    width: 25%;
+    font-size: 2.5rem;
+    margin: 0 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#mail .searchMail{
+    background-color: wheat;
+    font-size: 2rem;
+    color: var(--blau);
+}
+
+#mail .success{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(0, -50%);
+    color: green;
+    opacity: 0;
+    animation: result 1s ease-out forwards;
+}
+
+#mail .success i{
+    font-size: 5rem;
+    display: block;
+}
+
+#mail .failure{
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(0, -50%);
+    color: red;
+    opacity: 0;
+    animation: result 1s ease-out forwards;
+}
+
+#mail .failure i{
+    font-size: 5rem;
+    display: block;
+}
+
+@keyframes result {
+    100%{
+        opacity: 1;
+    }
+}
+/* DICE SECTION */
+
+#dice{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: var(--grana);
+}
+
+#dice button{
+    color: var(--blau);
+}
